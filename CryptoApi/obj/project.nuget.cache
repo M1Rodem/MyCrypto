@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wxGWOMWFgQg=",
+  "dgSpecHash": "qDC7RR04DCpH0sOkW9wN7GoJ7oyzcY/YuR3Gjcv1JwkwJxw04mm7cGcjydwa2d4f0mqp38kqwfneUGozSYVLFA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user1\\Desktop\\Crypto\\CryptoApi\\CryptoApi.csproj",
+  "projectFilePath": "/root/MyCrypto/CryptoApi/CryptoApi.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\user1\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512"
+    "/root/.nuget/packages/bouncycastle.cryptography/2.6.2/bouncycastle.cryptography.2.6.2.nupkg.sha512"
   ],
   "logs": []
 }

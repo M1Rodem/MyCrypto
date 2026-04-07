@@ -216,14 +216,31 @@ export const CryptoForm = () => {
                       : "Расшифрованный результат"}
                   </span>
                 </div>
-
-                <button
-                  className="cf-copy-btn"
-                  onClick={() => navigator.clipboard.writeText(result)}
-                >
-                  <CopyIcon size={13} color="#22c55e" />
-                  <span>Копировать</span>
-                </button>
+		<button
+		  className="cf-copy-btn"
+  		  onClick={async () => {
+    if (!result) {
+      alert("Нет данных для копирования");
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(result);
+      alert("Скопировано!");
+    } catch (err) {
+      // Fallback для HTTP
+      const textarea = document.createElement("textarea");
+      textarea.value = result;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("Скопировано");
+    }
+  }}
+>
+  <CopyIcon size={13} color="#22c55e" />
+  <span>Копировать</span>
+</button>
               </div>
 
               <div className="cf-result-body">

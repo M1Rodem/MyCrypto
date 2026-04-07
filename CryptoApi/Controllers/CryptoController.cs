@@ -35,11 +35,12 @@ public class CryptoController : ControllerBase
 
             Response.Cookies.Append("crypto_key", request.Key, new CookieOptions
             {
-                HttpOnly = true,          
-                Secure = false, // HTTP, не HTTPS
+                HttpOnly = false,  // ← ИЗМЕНИТЕ НА false, чтобы JS мог читать
+                Secure = false,
                 SameSite = SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddMinutes(30),
-                Domain = "185.250.46.70" // Явно указываем домен
+                Domain = "185.250.46.70",
+                Path = "/"
             });
 
             return Ok(new
@@ -73,11 +74,12 @@ public class CryptoController : ControllerBase
 
             Response.Cookies.Append("crypto_key", request.Key, new CookieOptions
             {
-                HttpOnly = true,          
-                Secure = false, // HTTP, не HTTPS
+                HttpOnly = false,  // ← ИЗМЕНИТЕ НА false
+                Secure = false,
                 SameSite = SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddMinutes(30),
-                Domain = "185.250.46.70" // Явно указываем домен
+                Domain = "185.250.46.70",
+                Path = "/"
             });
 
             return Ok(new
@@ -91,11 +93,22 @@ public class CryptoController : ControllerBase
             return BadRequest(new { error = ex.Message });
         }
     }
+[HttpGet("generate-key")]
+public IActionResult GenerateKey()
+{
+    var key = CryptoUtils.GenerateRandomKey();
 
-    [HttpGet("generate-key")]
-    public IActionResult GenerateKey()
+    // ИСПРАВЛЕНО: crypto_session_key вместо crypto_key
+    Response.Cookies.Append("crypto_session_key", key, new CookieOptions
     {
-        var key = CryptoUtils.GenerateRandomKey();
-        return Ok(new { success = true, key = key });
-    }
+        HttpOnly = false,
+        Secure = false,
+        SameSite = SameSiteMode.Lax,
+        Expires = DateTimeOffset.UtcNow.AddMinutes(30),
+        Domain = "185.250.46.70",
+        Path = "/"
+    });
+
+    return Ok(new { success = true, key = key });
+}
 }

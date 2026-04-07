@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user1\\Desktop\\Crypto\\CryptoApi\\CryptoApi.csproj": {}
+    "/root/MyCrypto/CryptoApi/CryptoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user1\\Desktop\\Crypto\\CryptoApi\\CryptoApi.csproj": {
+    "/root/MyCrypto/CryptoApi/CryptoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\Desktop\\Crypto\\CryptoApi\\CryptoApi.csproj",
+        "projectUniqueName": "/root/MyCrypto/CryptoApi/CryptoApi.csproj",
         "projectName": "CryptoApi",
-        "projectPath": "C:\\Users\\user1\\Desktop\\Crypto\\CryptoApi\\CryptoApi.csproj",
-        "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\Desktop\\Crypto\\CryptoApi\\obj\\",
+        "projectPath": "/root/MyCrypto/CryptoApi/CryptoApi.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/root/MyCrypto/CryptoApi/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,13 +32,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -75,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.125/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
