@@ -1,0 +1,66 @@
+:root {
+  --bg: #020617;
+  --bg-soft: #0b1220;
+  --border: rgba(255, 255, 255, 0.06);
+
+  --text-main: #e2e8f0;
+  --text-dim: #64748b;
+
+  --accent: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ГЛОУ ФОН */
+.bg-glow {
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(34,197,94,0.15), transparent 70%);
+  top: -200px;
+  left: -200px;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+/* КОНТЕЙНЕР */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* КАРТОЧКА */
+.card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* КНОПКА */
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: black;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}

@@ -1,0 +1,18 @@
+.cursor-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: visible;
+}
+
+.cp-item {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.cp-icon {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 0 8px currentColor);
+}

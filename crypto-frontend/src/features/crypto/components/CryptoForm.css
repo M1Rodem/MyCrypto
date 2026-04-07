@@ -1,0 +1,472 @@
+/* ============================================
+   CRYPTO FORM - ПОЛНЫЕ СТИЛИ
+   ============================================ */
+
+/* ====== WRAPPER ====== */
+.cf-wrapper {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background effects */
+.cf-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cf-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.cf-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.cf-glow-1 {
+  width: 350px;
+  height: 350px;
+  background: rgba(34, 197, 94, 0.12);
+  top: -100px;
+  right: -80px;
+}
+
+.cf-glow-2 {
+  width: 280px;
+  height: 280px;
+  background: rgba(59, 130, 246, 0.08);
+  bottom: -80px;
+  left: -60px;
+}
+
+/* ====== CARD ====== */
+.cf-card {
+  width: 100%;
+  max-width: 660px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  position: relative;
+  z-index: 10;
+}
+
+/* ====== HEADER ====== */
+.cf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.cf-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cf-logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.cf-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cf-title {
+  font-size: 21px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.cf-subtitle {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* ====== KEY BUTTON ====== */
+.cf-key-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.cf-key-btn.empty {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #000000;
+  box-shadow: 0 6px 22px rgba(34, 197, 94, 0.32);
+}
+
+.cf-key-btn.empty:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.45);
+}
+
+.cf-key-btn.empty:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cf-key-btn.loaded {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  cursor: default;
+}
+
+.cf-key-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: cf-pulse 2s infinite;
+}
+
+@keyframes cf-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+}
+
+/* ====== TABS ====== */
+.cf-tabs {
+  display: flex;
+  position: relative;
+  background: rgba(0, 0, 0, 0.28);
+  padding: 5px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.cf-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  position: relative;
+  z-index: 2; /* ВЫШЕ индикатора */
+}
+
+/* ✅ Цвет текста — явное указание */
+.cf-tab:not(.active) {
+  color: #64748b;
+}
+
+.cf-tab.active {
+  color: #000000; /* ЧЁРНЫЙ на зелёном фоне */
+}
+
+.cf-tab:hover:not(.active) {
+  color: #94a3b8;
+}
+
+/* ✅ Индикатор — position absolute, анимируется через transform: translateX */
+.cf-tab-indicator {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(50% - 5px); /* Половина минус отступы */
+  height: calc(100% - 10px);
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border-radius: 10px;
+  z-index: 1; /* НИЖЕ кнопок */
+  box-shadow: 0 3px 12px rgba(34, 197, 94, 0.35);
+
+  /* ✅ Важно: transform-origin для корректного сдвига */
+  transform-origin: left center;
+}
+
+/* Когда decrypt активен - индикатор сдвигается через framer-motion layoutId */
+
+/* ====== INPUT ====== */
+.cf-input-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.cf-input {
+  width: 100%;
+  padding: 16px;
+  background: rgba(2, 6, 23, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  color: #e2e8f0;
+  font-size: 15px;
+  line-height: 1.65;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.cf-input:focus {
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.08);
+}
+
+.cf-input::placeholder {
+  color: #475569;
+  font-style: italic;
+}
+
+.cf-char-count {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  font-size: 11px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* ====== ACTION ====== */
+.cf-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.cf-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border: none;
+  border-radius: 14px;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 26px rgba(34, 197, 94, 0.3);
+  font-family: inherit;
+}
+
+.cf-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(34, 197, 94, 0.42);
+}
+
+.cf-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.cf-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Spinner */
+.cf-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(0, 0, 0, 0.15);
+  border-top-color: #000000;
+  border-radius: 50%;
+  animation: cf-spin 0.7s linear infinite;
+}
+
+@keyframes cf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Warning */
+.cf-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 10px;
+  color: #f59e0b;
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+/* ====== RESULT С АНИМАЦИЯМИ ====== */
+.cf-result {
+  margin-top: 22px;
+  background: rgba(2, 6, 23, 0.92);
+  border: 1px solid rgba(34, 197, 94, 0.14);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cf-result-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 18px;
+  background: rgba(0, 0, 0, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.cf-result-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.cf-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 8px;
+  color: #22c55e;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.cf-copy-btn:hover {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.cf-result-body {
+  padding: 18px;
+}
+
+.cf-result-text {
+  font-family: "Fira Code", "Cascadia Code", monospace;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #e2e8f0;
+  word-break: break-all;
+  margin: 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 640px) {
+  .cf-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .cf-header {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .cf-header-left {
+    justify-content: center;
+  }
+
+  .cf-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .cf-subtitle {
+    text-align: center;
+  }
+
+  .cf-key-btn {
+    justify-content: center;
+  }
+
+  .cf-tabs {
+    gap: 5px;
+  }
+
+  .cf-tab span {
+    display: none;
+  }
+
+  .cf-tab {
+    padding: 12px;
+    justify-content: center;
+  }
+
+  .cf-tab-indicator {
+    left: 5px;
+    right: 5px;
+    width: auto;
+  }
+
+  .cf-input {
+    height: 120px;
+    font-size: 14px;
+  }
+
+  .cf-submit {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
