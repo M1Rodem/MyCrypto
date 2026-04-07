@@ -1,8 +1,9 @@
-C:\Users\user1\Desktop\CryptoApi\obj\Debug\net8.0\CryptoApi.csproj.AssemblyReference.cache
-C:\Users\user1\Desktop\CryptoApi\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\user1\Desktop\CryptoApi\obj\Debug\net8.0\CryptoApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user1\Desktop\CryptoApi\obj\Debug\net8.0\CryptoApi.AssemblyInfoInputs.cache
-C:\Users\user1\Desktop\CryptoApi\obj\Debug\net8.0\CryptoApi.AssemblyInfo.cs
-C:\Users\user1\Desktop\CryptoApi\obj\Debug\net8.0\CryptoApi.csproj.CoreCompileInputs.cache
-C:\Users\user1\Desktop\CryptoApi\obj\Debug\net8.0\CryptoApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\user1\Desktop\CryptoApi\obj\Debug\net8.0\CryptoApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\CryptoApi.csproj.AssemblyReference.cache
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\CryptoApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\CryptoApi.AssemblyInfoInputs.cache
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\CryptoApi.AssemblyInfo.cs
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\CryptoApi.csproj.CoreCompileInputs.cache
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\CryptoApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\CryptoApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user1\Desktop\Crypto\CryptoApi\obj\Debug\net8.0\CryptoApi.sourcelink.json
