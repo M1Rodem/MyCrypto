@@ -36,9 +36,10 @@ public class CryptoController : ControllerBase
             Response.Cookies.Append("crypto_key", request.Key, new CookieOptions
             {
                 HttpOnly = true,          
-                Secure = true,            
-                SameSite = SameSiteMode.Strict,
-                Expires = DateTimeOffset.UtcNow.AddMinutes(30)
+                Secure = false, // HTTP, не HTTPS
+                SameSite = SameSiteMode.Lax,
+                Expires = DateTimeOffset.UtcNow.AddMinutes(30),
+                Domain = "185.250.46.70" // Явно указываем домен
             });
 
             return Ok(new
@@ -73,9 +74,10 @@ public class CryptoController : ControllerBase
             Response.Cookies.Append("crypto_key", request.Key, new CookieOptions
             {
                 HttpOnly = true,          
-                Secure = true,            
-                SameSite = SameSiteMode.Strict,
-                Expires = DateTimeOffset.UtcNow.AddMinutes(30)
+                Secure = false, // HTTP, не HTTPS
+                SameSite = SameSiteMode.Lax,
+                Expires = DateTimeOffset.UtcNow.AddMinutes(30),
+                Domain = "185.250.46.70" // Явно указываем домен
             });
 
             return Ok(new

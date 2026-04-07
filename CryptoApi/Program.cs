@@ -3,51 +3,30 @@ using CryptoApi.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://localhost:5001");
+
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<CustomCryptoService>();
 builder.Services.AddScoped<ChaCha20Service>();
-    
 builder.Services.AddScoped<ICryptoService, CryptoService>();
 
+// CORS для публичного IP фронта
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
-            .AllowCredentials()
+        policy.WithOrigins("http://185.250.46.70:3001")
+            .AllowCredentials() 
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
 });
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new()
-    {
-        Title = "Crypto API",
-        Version = "v1",
-        Description = "API for encryption using Custom and ChaCha20 algorithms"
-    });
-});
-
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Crypto API v1");
-        c.RoutePrefix = "swagger";
-    });
-}
-
-app.UseCors("AllowAll");
+app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
-
-app.MapGet("/", () => Results.Redirect("/swagger"));
 
 app.Run();
